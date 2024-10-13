@@ -15,7 +15,7 @@ const Search = () => {
   const fetchDefaultMovies = async () => {
     setLoading(true); 
     try {
-      const res = await fetch(`http://www.omdbapi.com/?s=action&apikey=${API_KEY}`);
+      const res = await fetch(`https://www.omdbapi.com/?s=action&apikey=${API_KEY}`);
       const data = await res.json();
       setMovies(data.Search || []);
     } catch (error) {
@@ -29,7 +29,7 @@ const Search = () => {
     if (query.trim() === '') return;
     setLoading(true);
     try {
-      const res = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`);
+      const res = await fetch(`https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`);
       const data = await res.json();
       setMovies(data.Search || []);
     } catch (error) {
